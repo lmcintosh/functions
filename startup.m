@@ -11,8 +11,8 @@
 defaultfigureproperties;
 
 % email preferences
-setpref('Internet','E_mail','niru@matlab.com');
+setpref('Internet','E_mail','matlab@niru.org');
 setpref('Internet','SMTP_Server','mail');
 
 % change directory
-cd '~/Dropbox/';
+cd '~/Dropbox/'; ls;

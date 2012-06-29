@@ -4,5 +4,6 @@
 
 function fig(figidx)
     if nargin < 1
-        figidx = gcf;
+        figidx = figure;
     end
+    figure(figidx); clf; dockf;

@@ -12,4 +12,4 @@ beep off;
 load shortcuts;
 
 % change directory
-cd '~/Dropbox/'; ls;
+cd '~/Dropbox/'; ls; whos;

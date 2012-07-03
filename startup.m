@@ -11,8 +11,11 @@
 defaultfigureproperties;
 
 % email preferences
-setpref('Internet','E_mail','matlab@niru.org');
+setpref('Internet','E_mail','contact@niru.org');
 setpref('Internet','SMTP_Server','mail');
 
 % change directory
 cd '~/Dropbox/'; ls;
+
+% turn beep off
+beep off;

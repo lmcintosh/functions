@@ -6,8 +6,7 @@ function makepretty(varargin)
 
     set(gca,'TickDir','out','Box','off');
     grid on;
-    set( gca                       , ...
-        'FontName', 'Geneva','FontSize',14,'FontWeight','bold');
+    %set(gca,'FontName', 'Helvetica','FontSize',14,'FontWeight','bold');
     %set([hTitle, hXLabel, hYLabel], ...
         %'FontName'   , 'AvantGarde');
     %set([hXLabel, hYLabel]  , ...

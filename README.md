@@ -1,7 +1,7 @@
-functions
+# functions
 ==
 
-Niru Maheswaranathan (nirum@stanford.edu)
+### Niru Maheswaranathan (nirum@stanford.edu)
 --
 
 useful scripts and functions

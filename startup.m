@@ -11,5 +11,8 @@ beep off;
 % load shortcuts
 load shortcuts;
 
+% number format
+format short g
+
 % change directory
 cd '~/Dropbox/'; ls; whos;

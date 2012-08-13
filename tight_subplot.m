@@ -59,4 +59,3 @@ for ih = 1:Nh
     end
     py = py-axh-gap(1);
 end
-

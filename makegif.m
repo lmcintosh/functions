@@ -1,5 +1,5 @@
-% usage: [im,map] = makegif(im,map,figidx,frameidx,numframes,filename,dither)
-function [im,map] = makegif(im,map,figidx,frameidx,numframes,filename,dither,delaytime,loopcount);
+% usage: [im,map] = makegif(im,map,figidx,frameidx,numframes,filename,dither,delaytime,loopcount)
+function [im,map] = makegif(im,map,figidx,frameidx,numframes,filename,dither,delaytime,loopcount)
 
     f = getframe(figidx);
     if frameidx == 0

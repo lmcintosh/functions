@@ -10,3 +10,4 @@ function h = imgsc(img, scale)
     axis image;
     colorbar;
     set(gca,'XTick',[],'YTick',[]);
+    colormap gray;

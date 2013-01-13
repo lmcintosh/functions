@@ -14,5 +14,8 @@ load shortcuts;
 % number format
 format short g
 
+% Add additional directories to the path
+setenv('PATH', [getenv('PATH') ':/usr/local/bin:/usr/texbin']);
+
 % change directory
-cd '~/Dropbox/'; ls; whos;
+cd '~/Dropbox/'; %ls; whos;

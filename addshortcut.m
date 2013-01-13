@@ -5,4 +5,5 @@
 
 function addshortcut(str)
 eval([str ' = pwd;']);
+fprintf(['Saved ' pwd ' as shortcut ' str '.\n']);
 eval(['save(''~/Documents/Code/functions/shortcuts.mat'', ''' str ''', ''-append'');']);

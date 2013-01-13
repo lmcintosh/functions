@@ -21,4 +21,4 @@ set(h_main,'Position',get(main_fig,'Position'))
 inset_fig = findobj(inset_handle,'Type','axes');
 h_inset = copyobj(inset_fig,new_fig);
 ax=get(main_fig,'Position');
-set(h_inset,'Position', [.7*ax(1)+ax(3)-inset_size .5*ax(2)+ax(4)-inset_size inset_size inset_size])
+set(h_inset,'Position', [.75*ax(1)+ax(3)-inset_size .5*ax(2)+0.7*ax(4)-inset_size inset_size inset_size])

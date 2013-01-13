@@ -1,50 +1,25 @@
-%% function h = epplot(x, y, e, figidx)
-%  Plots power spectrum (PS) of signal, fits line to PS on loglog plot
-%  usage: x is the input signal, fmax is the maximum frequency to use [0 fmax], fs is the sampling frequency
-%  returns: slope and intercept of linear fit (slope is the exponent of the power fit)
-%  author: Niru Maheswaranathan (nirum@stanford.edu)
+% Error Patch Plot: plots line with patch showing standard deviation or error
+% Niru Maheswaranathan
+% Thu Sep  6 16:34:02 2012
+% h = epplot(x,y,e,color)
+% plots the line y vs. x with error patch given by e, with given RGB color
+% returns handle to patch in h(1), handle to line in h(2)
 
-function hE = epplot(x, y, e, figidx, colors)
+function h = epplot(x,y,e,color)
+
+    % store figure handles
+    h = zeros(2,1);
 
     if nargin < 4
-        figidx = gcf;
+        color = [0.2 0.2 0.2];
     end
 
-    if nargin < 5
-        colors = [1.0 1.0 1.0; ...
-                  0.3 0.5 1.0; ...
-                  0.8 0.8 0.8];
-    end
+    % get dimmer patch color
+    temp = rgb2hsv(color); temp(3) = temp(3) + 0.5*(1-temp(3));
+    patchcolor = hsv2rgb(temp);
 
-    %hE = errorbar(x, y, e, 'Color', colors(2,:));
-    hE(1) = patch([x fliplr(x)], [y-e fliplr(y+e)], colors(2,:)); hold on;
-    hE(2) = plot(x, y, '-', 'Color', colors(1,:)); hold off;
-
-    hTitle  = title ('Title');
-    hXLabel = xlabel('x');
-    hYLabel = ylabel('y');
-
-    set(gca,'TickDir','out','Box','off');
-    axis([x(1)-1 x(end)+1 min(y-1.1*e) max(y+1.1*e)]);
-
-    set( gca                       , ...
-        'FontName'   , 'Helvetica' );
-    set([hTitle, hXLabel, hYLabel], ...
-        'FontName'   , 'AvantGarde');
-    set([hXLabel, hYLabel]  , ...
-        'FontSize'   , 14          );
-    set( hTitle                    , ...
-        'FontSize'   , 18          , ...
-        'FontWeight' , 'bold'      );
-
-    set(gca, ...
-    'Box'         , 'off'     , ...
-    'TickDir'     , 'out'     , ...
-    'TickLength'  , [.02 .02] , ...
-    'XMinorTick'  , 'on'      , ...
-    'YMinorTick'  , 'on'      , ...
-    'YGrid'       , 'on'      , ...
-    'XGrid'       , 'on'      , ...
-    'XColor'      , colors(3,:), ...
-    'YColor'      , colors(3,:), ...
-    'LineWidth'   , 1         );
+    % plot line
+    h(1) = patch([x fliplr(x)], [y-e fliplr(y+e)], patchcolor); hold on;
+    h(2) = plot(x,y,'-','Color',color); hold off;
+    set(h(1),'FaceAlpha',0.2,'EdgeAlpha',0);
+    makepretty; grid on;

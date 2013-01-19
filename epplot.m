@@ -7,6 +7,11 @@
 
 function h = epplot(x,y,e,color)
 
+    % make row vectors
+    x = row(x);
+    y = row(y);
+    e = row(e);
+
     % store figure handles
     h = zeros(2,1);
 

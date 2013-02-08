@@ -1,4 +1,6 @@
 function [N] = hist2D(xVals,yVals,binCx,binCy,doPlot)
+% INPUTS: xVals, yVals, binCx, binCy, doPlot (1 is plots on)
+% OUTPUTS: N
 
 if exist('doPlot') ~= 1
     doPlot = 0;

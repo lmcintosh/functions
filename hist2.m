@@ -1,4 +1,7 @@
 function hist2(H0,H1)
+% this just plots the distributions in the same figure
+% INPUTS: H0, H1
+% OUTPUTS: none
 
 figure; hold on
 hist(H0)
